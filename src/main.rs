@@ -3,7 +3,10 @@ use actix_web::*;
 mod routes;
 use routes::{ping};
 
-#[actix_web::main]
+#[actix_web::main];
+
+// RAII - Escopo 
+
 async fn main() -> Result<(), std::io::Error>{
     let api = HttpServer::new( || {
         App::new()
@@ -18,5 +21,4 @@ async fn main() -> Result<(), std::io::Error>{
 
     api.run()
     .await  
-
     }
